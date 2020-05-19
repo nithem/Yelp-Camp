@@ -1,0 +1,41 @@
+.thumbnail img{
+    width: 100%;
+}
+
+.thumbnail{
+    padding: 0%;
+}
+
+.thumbnail .caption-full{
+    padding: 9px;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color:blu;
+    }
+li{
+    float: right;
+
+}	
+li a{
+    color: black;
+    display: block;
+    padding: 25px;
+    text-decoration: none;
+}
+li a:hover{
+    color: blue;
+}
+#camp{
+    float: left;
+    size: 2px ;
+}
+#delete-form{
+    display: inline;
+}
+#trad{
+    text-align: center;
+}
