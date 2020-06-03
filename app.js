@@ -10,18 +10,20 @@ var LocalStrategy = require("passport-local");
 var Comment = require("./models/comment");
 var User = require("./models/user");
 var Campground = require("./models/campground");
-    seedDB = require("./seeds");
+var port = process.env.PORT
+var seedDB = require("./seeds");
 //requiring routes
 var commentRoutes = require("./routes/comment"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index")
 
-mongoose.connect("mongodb://localhost/yelp_camp",{
+mongoose.connect(process.env.MONGODB_URL,{
     useNewUrlParser : true,
     useUnifiedTopology : true,
     useCreateIndex : true,
     useFindAndModify : false
 });
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
@@ -78,6 +80,6 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 
 
-app.listen(2000,function(){
-    console.log("Yelpcamp serevr has started");
+app.listen(port,function(){
+    console.log("Yelpcamp serevr has started" + port);
 });
